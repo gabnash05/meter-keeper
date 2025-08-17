@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<main style="max-width:480px;margin:0 auto;padding:16px;">
+    <h1 style="font-size:1.25rem;margin-bottom:12px;">Profile</h1>
+    <form method="POST" novalidate>
+        {{ form.csrf_token }}
+        <label>Electricity Rate</label>
+        {{ form.electricity_rate(class_="input", step="0.0001") }}
+        {{ form.submit(class_="btn") }}
+    </form>
+</main>
+{% endblock %}

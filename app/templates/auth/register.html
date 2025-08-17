@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<main style="max-width:480px;margin:0 auto;padding:16px;">
+    <h1 style="font-size:1.25rem;margin-bottom:12px;">Register</h1>
+    <form method="POST" novalidate>
+        {{ form.csrf_token }}
+        <label>Username</label>
+        {{ form.username(class_="input", placeholder="yourname") }}
+        <label>Email</label>
+        {{ form.email(class_="input", type="email", placeholder="you@example.com") }}
+        <label>Password</label>
+        {{ form.password(class_="input", type="password") }}
+        <label>Confirm Password</label>
+        {{ form.confirm(class_="input", type="password") }}
+        {{ form.submit(class_="btn") }}
+    </form>
+    <p style="margin-top:12px;"><a href="{{ url_for('auth.login') }}">Already have an account? Log in</a></p>
+</main>
+{% endblock %}

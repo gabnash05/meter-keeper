@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<main style="max-width:480px;margin:0 auto;padding:16px;">
+    <h1 style="font-size:1.25rem;margin-bottom:12px;">Log In</h1>
+    <form method="POST" novalidate>
+        {{ form.csrf_token }}
+        <label>Email</label>
+        {{ form.email(class_="input", type="email", placeholder="you@example.com") }}
+        <label>Password</label>
+        {{ form.password(class_="input", type="password", placeholder="••••••••") }}
+        {{ form.submit(class_="btn") }}
+    </form>
+    <p style="margin-top:12px;"><a href="{{ url_for('auth.register') }}">Create an account</a></p>
+</main>
+{% endblock %}
