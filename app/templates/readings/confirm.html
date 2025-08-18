@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Confirm Reading</h2>
+
+<!-- Image is served through a secure route, not from /static -->
+<img src="{{ url_for('readings.pending_image') }}" alt="Uploaded meter" style="max-width:100%;height:auto;display:block;margin-bottom:1rem;">
+
+<form method="post">
+    <label for="kwh">Detected kWh:</label>
+    <input type="text" id="kwh" name="kwh" value="{{ pending.kwh }}" inputmode="decimal" pattern="[0-9]+(\.[0-9]+)?" required>
+    <button type="submit" style="display:block;margin-top:1rem;">Confirm</button>
+</form>
+{% endblock %}
